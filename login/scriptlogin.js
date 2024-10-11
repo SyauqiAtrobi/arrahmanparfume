@@ -28,7 +28,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     const isValid = await verifyLogin(username, password);
     if (isValid) {
         // Jika berhasil, arahkan ke admin.html
-        window.location.href = 'arrahmanparfume/admin/admin.html'; // Ganti dengan path yang sesuai
+        window.location.href = 'admin/admin.html'; // Ganti dengan path yang sesuai
     } else {
         alert('Username atau password salah!');
     }
