@@ -1,4 +1,4 @@
-const urls = `https://docs.google.com/spreadsheets/d/e/2PACX-1vT3rcFW4ZOSibGhbubam2tyLqwbN6kbvEiYbbT0wXKvN10U_hkHCtUzj_S5Lden-t7r_Hh9uJJZN6fu/pub?gid=932254536&single=true&output=csv`;
+const urls = `https://docs.google.com/spreadsheets/d/e/2PACX-1vT3rcFW4ZOSibGhbubam2tyLqwbN6kbvEiYbbT0wXKvN10U_hkHCtUzj_S5Lden-t7r_Hh9uJJZN6fu/pub?gid=292398955&single=true&output=csv`;
 
 // Fungsi untuk mengambil data dari Google Sheets dan menampilkannya
 async function fetchData() {
@@ -8,11 +8,11 @@ async function fetchData() {
 
     rows.forEach(row => {
         const columns = row.split(","); // Memisahkan kolom berdasarkan koma
-        const itemName = columns[1]; // Nama item
-        const gambar = columns[2];   // URL gambar Google Drive
-        const deskripsi = columns[3]; // Deskripsi produk
-        const harga = columns[4];     // Harga produk
-        let detail = columns[5];
+        const itemName = columns[0];     // Nama item
+        let gambar = columns[1];         // URL gambar Google Drive
+        const deskripsi = columns[2];    // Deskripsi produk
+        const detail = columns[3];       // Detail produk
+        const harga = columns[4];        // Harga produk
 
         document.querySelectorAll('.btnDetail').forEach(item => {
             item.addEventListener('click', (e) => {
