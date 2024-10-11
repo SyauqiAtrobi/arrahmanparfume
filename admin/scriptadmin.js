@@ -1,6 +1,19 @@
 const form = document.getElementById('inputForm');
 const scriptURL = 'https://script.google.com/macros/s/AKfycbycFpqWJQBZZ0JFNvqGsQSdm0lWYiBCcsLGCDenssM7icSVILt2AVvb2le_TvydMZi4zQ/exec';
+if (!localStorage.getItem('isLoggedIn')) {
+            // Jika belum, arahkan ke halaman login
+            window.location.href = "../login/login.html"; // Sesuaikan dengan path login.html Anda
+        }
 
+function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = "../login/login.html"; // Arahkan kembali ke halaman login
+        }
+
+        // Menyimpan status login jika berhasil login
+if (localStorage.getItem('isLoggedIn') === 'true') {
+            // Pengguna sudah login, Anda bisa menampilkan konten admin di sini
+        }
 form.addEventListener('submit', e => {
     e.preventDefault();
     const formData = new FormData(form);
